@@ -79,6 +79,13 @@ export const providers = {
   },
 };
 
+export const whatHappensNext = [
+  "Book online for an in-person or virtual consultation.",
+  "We review your goals, medical history, and candidacy together.",
+  "You receive a clear plan, pricing context, and aftercare guidance.",
+  "Treat the same day only if you feel ready. There is no pressure to decide immediately.",
+];
+
 export const services = [
   {
     slug: "neurotoxins",
@@ -88,13 +95,40 @@ export const services = [
     duration: "About 1 hour",
     image: "/images/service-neurotoxins.jpg",
     imagePosition: "70% center",
+    imageAlt: "Patient reflecting on refreshed facial appearance after aesthetic care",
+    related: ["dermal-fillers", "microneedling"],
     summary:
       "Soften fine lines with neurotoxins such as Botox and similar treatments, while keeping natural movement.",
-    description: [
-      "Neurotoxin treatments (including Botox and comparable wrinkle relaxers) gently relax targeted facial muscles to soften fine lines and help prevent deeper creases over time.",
-      "Visits are planned around your expressions and comfort. The goal is a rested look, not a frozen one. Most appointments are about an hour so you have time to ask questions before treatment.",
-      "A good fit if you want preventative or maintenance care for forehead lines, frown lines, or crow’s feet and prefer subtle, natural movement. Not ideal if you want dramatic change in one visit or are not ready for a medical consultation.",
-      "Aftercare is reviewed before you leave. Results develop over days and typically need maintenance. Pricing starts from our online booking rate and varies by areas treated and units required.",
+    opening:
+      "Neurotoxins and Botox in San Diego at Dose by Design are planned for a rested look, not a frozen one. Cathy Tang, PA-C, maps treatment to your expressions during an unhurried visit.",
+    sections: [
+      {
+        heading: "How neurotoxin treatment works",
+        paragraphs: [
+          "Neurotoxin treatments (including Botox and comparable wrinkle relaxers) gently relax targeted facial muscles to soften fine lines and help prevent deeper creases over time.",
+          "Visits are planned around your expressions and comfort in San Diego. Most appointments are about an hour so you have time to ask questions before treatment.",
+        ],
+      },
+      {
+        heading: "Who is a good fit",
+        paragraphs: [
+          "A good fit if you want preventative or maintenance care for forehead lines, frown lines, or crow’s feet and prefer subtle, natural movement.",
+          "Not ideal if you want dramatic change in one visit or are not ready for a medical consultation.",
+        ],
+      },
+      {
+        heading: "Prep and aftercare",
+        paragraphs: [
+          "Come with a clean face when possible and share recent procedures, medications, and goals during consultation.",
+          "Aftercare is reviewed before you leave. Results develop over days and typically need maintenance.",
+        ],
+      },
+      {
+        heading: "What affects pricing",
+        paragraphs: [
+          "Online booking shows a starting rate from $300. Final cost varies by areas treated and units required. Your consultation clarifies options before you decide.",
+        ],
+      },
     ],
     concerns: ["Fine lines", "Wrinkles", "Looking tired", "Preventative care"],
   },
@@ -106,13 +140,40 @@ export const services = [
     duration: "About 1 hour",
     image: "/images/provider-portrait-2.jpg",
     imagePosition: "center 38%",
+    imageAlt: "Close-up of a lip filler injection during an aesthetic appointment",
+    related: ["filler-dissolver", "neurotoxins"],
     summary:
       "Restore volume and refine contours with dermal fillers, including lip filler, plus cheeks, jawline, and under-eyes.",
-    description: [
-      "Dermal fillers can restore lost volume, soften lines, and support facial balance. That may include lip filler, cheek support, jawline definition, or under-eye refinement when appropriate.",
-      "We take a personalized, conservative approach. The aim is never to change your features, but to refresh and enhance your natural structure.",
-      "A good fit if you want subtle volume or contour support and are open to a collaborative plan. Not ideal if you want an overfilled look or same-day treatment without assessment.",
-      "Your consultation covers candidacy, product selection, expected longevity, and aftercare. Swelling or bruising can occur. Starting prices appear in online booking and vary by product and amount used.",
+    opening:
+      "Dermal fillers and lip filler in San Diego are approached conservatively at Dose by Design. The goal is balance that still looks like you, planned with Cathy Tang, PA-C.",
+    sections: [
+      {
+        heading: "What dermal fillers can address",
+        paragraphs: [
+          "Dermal fillers can restore lost volume, soften lines, and support facial balance in San Diego patients. That may include lip filler, cheek support, jawline definition, or under-eye refinement when appropriate.",
+          "We take a personalized, conservative approach. The aim is never to change your features, but to refresh and enhance your natural structure.",
+        ],
+      },
+      {
+        heading: "Who is a good fit",
+        paragraphs: [
+          "A good fit if you want subtle volume or contour support and are open to a collaborative plan.",
+          "Not ideal if you want an overfilled look or same-day treatment without assessment.",
+        ],
+      },
+      {
+        heading: "Prep and aftercare",
+        paragraphs: [
+          "Your consultation covers candidacy, product selection, expected longevity, and aftercare.",
+          "Swelling or bruising can occur. We review how to care for the treated area before you leave.",
+        ],
+      },
+      {
+        heading: "What affects pricing",
+        paragraphs: [
+          "Online booking shows a starting rate from $400. Final cost varies by product and amount used. Pricing is confirmed during consultation.",
+        ],
+      },
     ],
     concerns: ["Facial volume loss", "Facial asymmetry", "Looking tired", "Aging gracefully"],
   },
@@ -124,13 +185,40 @@ export const services = [
     duration: "Consultation required",
     image: "/images/atmosphere-2.jpg",
     imagePosition: "center 42%",
+    imageAlt: "Clinical injectable tray used in aesthetic medicine",
+    related: ["dermal-fillers", "neurotoxins"],
     summary:
       "Dissolve hyaluronic acid filler to address overcorrection, migration, asymmetry, or unwanted results.",
-    description: [
-      "Hyaluronic acid filler dissolving uses hyaluronidase to safely break down previously placed filler when refinement or correction is needed.",
-      "Our approach is precise and conservative, focused on restoring balance and creating a clean foundation for future treatments if desired.",
-      "A good fit if you are unhappy with overcorrection, migration, asymmetry, or unwanted hyaluronic acid filler. Not every filler type can be dissolved the same way; we confirm product history during consultation.",
-      "Expect assessment first. Dissolving may require follow-up, and future filler is optional, never assumed.",
+    opening:
+      "Filler dissolving in San Diego at Dose by Design starts with assessment. Cathy Tang, PA-C, focuses on precise, conservative correction when hyaluronic acid filler needs refinement.",
+    sections: [
+      {
+        heading: "How dissolving works",
+        paragraphs: [
+          "Hyaluronic acid filler dissolving uses hyaluronidase to safely break down previously placed filler when refinement or correction is needed.",
+          "Our San Diego approach is precise and conservative, focused on restoring balance and creating a clean foundation for future treatments if desired.",
+        ],
+      },
+      {
+        heading: "Who is a good fit",
+        paragraphs: [
+          "A good fit if you are unhappy with overcorrection, migration, asymmetry, or unwanted hyaluronic acid filler.",
+          "Not every filler type can be dissolved the same way; we confirm product history during consultation.",
+        ],
+      },
+      {
+        heading: "What to expect",
+        paragraphs: [
+          "Expect assessment first. Dissolving may require follow-up, and future filler is optional, never assumed.",
+          "Aftercare and timing for any future treatments are reviewed before you leave.",
+        ],
+      },
+      {
+        heading: "Pricing",
+        paragraphs: [
+          "Filler dissolving requires consultation first. Pricing depends on the amount and complexity of correction needed.",
+        ],
+      },
     ],
     concerns: ["Facial asymmetry", "Overcorrection", "Unwanted filler results"],
   },
@@ -142,13 +230,40 @@ export const services = [
     duration: "About 1 hour",
     image: "/images/service-fillers.jpg",
     imagePosition: "center 35%",
+    imageAlt: "Provider performing a facial microneedling treatment",
+    related: ["neurotoxins", "dermal-fillers"],
     summary:
       "Support smoother-looking skin and a refreshed glow with a tailored microneedling session.",
-    description: [
-      "A 60-minute microneedling session designed to help improve the look of texture and tone.",
-      "We’ll tailor the treatment to your skin goals and provide aftercare guidance for best results.",
-      "A good fit if you want smoother-looking skin and a refreshed glow with downtime that fits a maintenance plan. Not ideal for every active skin condition; candidacy is reviewed in consultation.",
-      "Aftercare typically includes sun protection and a short recovery window. Starting price is listed in online booking and may vary with add-ons discussed in your visit.",
+    opening:
+      "Microneedling in San Diego at Dose by Design is tailored to your skin goals in about an hour, with candidacy and aftercare reviewed before and after treatment.",
+    sections: [
+      {
+        heading: "What microneedling involves",
+        paragraphs: [
+          "A 60-minute microneedling session designed to help improve the look of texture and tone for San Diego patients seeking a refreshed glow.",
+          "We’ll tailor the treatment to your skin goals and provide aftercare guidance for best results.",
+        ],
+      },
+      {
+        heading: "Who is a good fit",
+        paragraphs: [
+          "A good fit if you want smoother-looking skin and a refreshed glow with downtime that fits a maintenance plan.",
+          "Not ideal for every active skin condition; candidacy is reviewed in consultation.",
+        ],
+      },
+      {
+        heading: "Prep and aftercare",
+        paragraphs: [
+          "Arrive with clean skin when possible and share any recent treatments or sensitivities during your visit.",
+          "Aftercare typically includes sun protection and a short recovery window.",
+        ],
+      },
+      {
+        heading: "What affects pricing",
+        paragraphs: [
+          "Online booking shows a starting rate from $400. Final cost may vary with add-ons discussed in your San Diego visit.",
+        ],
+      },
     ],
     concerns: ["Skin texture", "Skin tone", "Looking refreshed"],
   },
@@ -205,6 +320,11 @@ export const faqs = [
     question: "Do you offer virtual consultations?",
     answer:
       "Yes. You can book an in-person or virtual consultation through our online booking system.",
+  },
+  {
+    question: "What affects treatment pricing?",
+    answer:
+      "Online booking lists starting rates for some services. Final cost varies by areas treated, product or units used, and your personalized plan. Your San Diego consultation covers pricing context before you decide.",
   },
   {
     question: "Where are you located?",

@@ -10,8 +10,8 @@ export default function FaqPage() {
   return (
     <>
       <Seo
-        title="FAQ"
-        description="Frequently asked questions about Dose by Design consultations, location, hours, membership, and financing in San Diego."
+        title="FAQ in San Diego, CA | Dose by Design"
+        description="Answers about Dose by Design consultations, pricing factors, location, hours, membership, and financing in San Diego. Book or call when you are ready."
         path="/faq"
         jsonLd={[
           buildLocalBusinessSchema(),
@@ -26,10 +26,19 @@ export default function FaqPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">FAQ</p>
-          <h1>Answers before you book.</h1>
+          <h1>San Diego med spa FAQ.</h1>
           <p className="lede">
-            Still unsure? Book a consultation. We’ll walk through options without pressure.
+            Common questions before you book at Dose by Design. Still unsure? We’ll walk through
+            options without pressure.
           </p>
+          <div className="btn-row">
+            <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
+              Book consultation
+            </a>
+            <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
+              Call {business.phone}
+            </a>
+          </div>
         </div>
       </section>
 
@@ -44,6 +53,9 @@ export default function FaqPage() {
           <div className="btn-row" style={{ marginTop: "1rem" }}>
             <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
               Book consultation
+            </a>
+            <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
+              Call {business.phone}
             </a>
           </div>
         </div>

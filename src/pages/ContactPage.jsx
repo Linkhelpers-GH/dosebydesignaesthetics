@@ -1,14 +1,14 @@
 import Seo from "../components/Seo";
 import MapEmbed from "../components/MapEmbed";
-import { business } from "../data/business";
+import { business, whatHappensNext } from "../data/business";
 import { buildBreadcrumbSchema, buildLocalBusinessSchema } from "../seo/schema";
 
 export default function ContactPage() {
   return (
     <>
       <Seo
-        title="Contact & Location in San Diego"
-        description="Visit Dose by Design at 4642 30th St Suite 104A, San Diego, CA 92116. Call (209) 991-2227 or book online."
+        title="Contact & Location in San Diego, CA | Dose by Design"
+        description="Visit Dose by Design at 4642 30th St Suite 104A, San Diego, CA 92116. Call (209) 991-2227 or book a consultation online."
         path="/contact"
         jsonLd={[
           buildLocalBusinessSchema(),
@@ -22,9 +22,10 @@ export default function ContactPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">Contact</p>
-          <h1>Contact Dose by Design in San Diego.</h1>
+          <h1>Contact Dose by Design in San Diego, CA.</h1>
           <p className="lede">
-            Book online, call, or email. We’re happy to help you find Suite 104A for your visit.
+            Book online, call, or email. We’re happy to help you find Suite 104A for your visit.{" "}
+            {business.rating.value}.0 from {business.rating.count} Google reviews.
           </p>
         </div>
       </section>
@@ -51,6 +52,9 @@ export default function ContactPage() {
               <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
                 Call {business.phone}
               </a>
+              <a className="btn btn--secondary" href={business.mapsUrl} target="_blank" rel="noreferrer">
+                Google reviews
+              </a>
             </div>
           </div>
 
@@ -76,9 +80,7 @@ export default function ContactPage() {
         <div className="container">
           <p className="eyebrow">Directions</p>
           <h2>Find us on the map</h2>
-          <p className="lede">
-            Use the map for turn-by-turn directions to Suite 104A.
-          </p>
+          <p className="lede">Use the map for turn-by-turn directions to Suite 104A.</p>
           <MapEmbed className="map-embed--wide" />
           <div className="btn-row">
             <a className="btn btn--secondary" href={business.mapsUrl} target="_blank" rel="noreferrer">
@@ -89,15 +91,22 @@ export default function ContactPage() {
       </section>
 
       <section className="section section--lavender">
-        <div className="container split">
-          <div className="split__media">
-            <img
-              src="/images/clinic-1.jpg"
-              alt="Dose by Design treatment setting"
-              width="1000"
-              height="1200"
-              loading="lazy"
-            />
+        <div className="container grid-2">
+          <div>
+            <h2>What happens next</h2>
+            <ol className="next-steps">
+              {whatHappensNext.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
+            <div className="btn-row">
+              <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
+                Book consultation
+              </a>
+              <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
+                Call {business.phone}
+              </a>
+            </div>
           </div>
           <div>
             <h2>Prefer to message first?</h2>

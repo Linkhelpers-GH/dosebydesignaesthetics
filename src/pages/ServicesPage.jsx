@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
-import { business, services } from "../data/business";
+import { business, services, whatHappensNext } from "../data/business";
 import { buildBreadcrumbSchema, buildLocalBusinessSchema } from "../seo/schema";
 
 export default function ServicesPage() {
   return (
     <>
       <Seo
-        title="Aesthetic Services in San Diego"
-        description="Neurotoxins, dermal fillers, filler dissolving, and microneedling at Dose by Design in San Diego. Personalized plans with natural-looking results."
+        title="Aesthetic Services in San Diego, CA | Dose by Design"
+        description="Browse neurotoxins, dermal fillers, filler dissolving, and microneedling in San Diego. Book a consultation with Cathy Tang, PA-C, at Dose by Design."
         path="/services"
         image="/images/service-neurotoxins.jpg"
         jsonLd={[
@@ -23,10 +23,20 @@ export default function ServicesPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">Services</p>
-          <h1>Aesthetic services in San Diego.</h1>
+          <h1>Aesthetic services in San Diego, CA.</h1>
           <p className="lede">
-            Every recommendation starts with your goals, anatomy, and comfort. Never a one-size plan.
+            Dose by Design offers personalized neurotoxins, dermal fillers, filler dissolving, and
+            microneedling with Cathy Tang, PA-C. Every plan starts with your goals, anatomy, and
+            comfort.
           </p>
+          <div className="btn-row">
+            <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
+              Book consultation
+            </a>
+            <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
+              Call {business.phone}
+            </a>
+          </div>
         </div>
       </section>
 
@@ -37,7 +47,7 @@ export default function ServicesPage() {
               <Link className="service-card__media" to={`/services/${service.slug}`}>
                 <img
                   src={service.image}
-                  alt=""
+                  alt={service.imageAlt || service.name}
                   width="720"
                   height="900"
                   loading="lazy"
@@ -75,6 +85,12 @@ export default function ServicesPage() {
         </div>
 
         <div className="container" style={{ marginTop: "2.5rem" }}>
+          <h2>What happens next</h2>
+          <ol className="next-steps">
+            {whatHappensNext.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
           <p className="muted">
             Consultations are available in person or virtually. Pricing shown reflects current
             online booking starting rates and may vary based on your personalized plan.
@@ -83,6 +99,18 @@ export default function ServicesPage() {
             <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
               Book consultation
             </a>
+            <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
+              Call {business.phone}
+            </a>
+            <Link className="btn btn--secondary" to="/about">
+              Meet the team
+            </Link>
+            <Link className="btn btn--secondary" to="/contact">
+              Contact & map
+            </Link>
+            <Link className="btn btn--secondary" to="/faq">
+              FAQ
+            </Link>
           </div>
         </div>
       </section>

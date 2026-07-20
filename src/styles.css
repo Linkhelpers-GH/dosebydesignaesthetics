@@ -726,6 +726,14 @@ h3 {
   margin-top: 0;
 }
 
+.service-block {
+  margin-bottom: 1.5rem;
+}
+
+.service-block h2 {
+  margin-bottom: 0.65rem;
+}
+
 .service-nap {
   margin-top: 1.5rem;
   padding: 1rem 0 0;
@@ -736,6 +744,38 @@ h3 {
   margin: 0;
   color: var(--ink-soft);
   font-size: 0.98rem;
+}
+
+.next-steps {
+  margin: 0 0 1.5rem;
+  padding-left: 1.2rem;
+  color: var(--ink-soft);
+}
+
+.next-steps li {
+  margin-bottom: 0.45rem;
+}
+
+.related-services {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.related-services__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+}
+
+.related-services__list a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.related-services__list a:hover {
+  color: var(--lavender-700);
+  text-decoration: underline;
 }
 
 .journey-step {

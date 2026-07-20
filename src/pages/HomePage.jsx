@@ -7,6 +7,7 @@ import {
   membership,
   providers,
   services,
+  whatHappensNext,
 } from "../data/business";
 import {
   buildLocalBusinessSchema,
@@ -19,7 +20,7 @@ export default function HomePage() {
     <>
       <Seo
         title="Dose by Design | Med Spa & Aesthetic Medicine in San Diego"
-        description="Dose by Design is a San Diego med spa offering personalized aesthetic medicine with Cathy Tang, PA-C. Natural-looking neurotoxins, dermal fillers, and microneedling with education-first consultations."
+        description="Book a San Diego med spa consultation with Cathy Tang, PA-C. Natural-looking neurotoxins, dermal fillers, and microneedling with education-first care."
         path="/"
         image="/images/cathy-tang.jpg"
         jsonLd={[
@@ -33,7 +34,7 @@ export default function HomePage() {
         <div className="hero__media" aria-hidden="true">
           <img
             src="/images/cathy-tang.jpg"
-            alt=""
+            alt="Cathy Tang, PA-C, founder of Dose by Design"
             width="1000"
             height="1500"
             fetchPriority="high"
@@ -45,12 +46,16 @@ export default function HomePage() {
           <p className="hero__brand">Dose by Design</p>
           <h1>San Diego med spa for natural, refreshed results.</h1>
           <p>
-            {business.tagline} Personalized aesthetic medicine with Cathy Tang, PA-C. Education first.
-            Never rushed.
+            Personalized aesthetic medicine in San Diego with Cathy Tang, PA-C. Neurotoxins, dermal
+            fillers, and skin rejuvenation planned around your face, your pace, and natural-looking
+            results. {business.rating.value}.0 from {business.rating.count} Google reviews.
           </p>
           <div className="btn-row">
             <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
               Book consultation
+            </a>
+            <a className="btn btn--secondary btn--on-hero" href={`tel:${business.phoneTel}`}>
+              Call {business.phone}
             </a>
             <Link className="btn btn--secondary btn--on-hero" to="/services">
               Explore services
@@ -103,8 +108,8 @@ export default function HomePage() {
           <p className="eyebrow">Featured services</p>
           <h2>Treatments designed for balance.</h2>
           <p className="lede">
-            Neurotoxins, dermal fillers, filler dissolving, and microneedling, booked online when
-            you’re ready.
+            Neurotoxins, dermal fillers, filler dissolving, and microneedling in San Diego, booked
+            online when you’re ready.
           </p>
           <div className="grid-services" style={{ marginTop: "2rem" }}>
             {services.map((service) => (
@@ -112,7 +117,7 @@ export default function HomePage() {
                 <div className="service-tile__media">
                   <img
                     src={service.image}
-                    alt=""
+                    alt={service.imageAlt || service.name}
                     width="800"
                     height="1000"
                     loading="lazy"
@@ -187,6 +192,12 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <h3 style={{ marginTop: "2rem" }}>What happens next</h3>
+          <ol className="next-steps">
+            {whatHappensNext.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -278,6 +289,9 @@ export default function HomePage() {
           <div className="btn-row" style={{ justifyContent: "center" }}>
             <a className="btn btn--ghost-light" href={business.bookingUrl} target="_blank" rel="noreferrer">
               Book consultation
+            </a>
+            <a className="btn btn--ghost-light" href={`tel:${business.phoneTel}`}>
+              Call {business.phone}
             </a>
           </div>
         </div>

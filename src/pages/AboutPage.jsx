@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
-import { business, providers } from "../data/business";
+import { business, providers, whatHappensNext } from "../data/business";
 import {
   buildBreadcrumbSchema,
   buildLocalBusinessSchema,
@@ -11,8 +11,8 @@ export default function AboutPage() {
   return (
     <>
       <Seo
-        title="About Cathy Tang, PA-C"
-        description="Meet Cathy Tang, PA-C, founder of Dose by Design in San Diego, and Medical Director Dr. Abiade Short, MD. Personalized aesthetic medicine focused on natural results."
+        title="Cathy Tang, PA-C in San Diego, CA | Dose by Design"
+        description="Meet Cathy Tang, PA-C, aesthetic injector and founder of Dose by Design in San Diego, and Medical Director Dr. Abiade Short, MD. Book a consultation."
         path="/about"
         image={providers.cathy.image}
         jsonLd={[
@@ -28,11 +28,19 @@ export default function AboutPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">About</p>
-          <h1>Cathy Tang, PA-C, aesthetic injector in San Diego.</h1>
+          <h1>Cathy Tang, PA-C, aesthetic injector in San Diego, CA.</h1>
           <p className="lede">
             Dose by Design exists to help you look refreshed and confident, while still looking like
-            yourself.
+            yourself. {business.rating.value}.0 from {business.rating.count} Google reviews.
           </p>
+          <div className="btn-row">
+            <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
+              Book consultation
+            </a>
+            <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
+              Call {business.phone}
+            </a>
+          </div>
         </div>
       </section>
 
@@ -59,6 +67,9 @@ export default function AboutPage() {
               <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
                 Book with Cathy
               </a>
+              <Link className="btn btn--secondary" to="/services">
+                View services
+              </Link>
             </div>
           </div>
         </div>
@@ -87,18 +98,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section section--ink section--tight">
-        <div className="container" style={{ textAlign: "center" }}>
-          <h2>Curious whether we’re the right fit?</h2>
-          <p className="lede" style={{ marginInline: "auto" }}>
-            Start with a consultation, in person or virtual, and we’ll map a plan around your goals.
-          </p>
-          <div className="btn-row" style={{ justifyContent: "center" }}>
-            <a className="btn btn--ghost-light" href={business.bookingUrl} target="_blank" rel="noreferrer">
+      <section className="section section--lavender section--tight">
+        <div className="container">
+          <h2>What happens next</h2>
+          <ol className="next-steps">
+            {whatHappensNext.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+          <div className="btn-row">
+            <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
               Book consultation
             </a>
-            <Link className="btn btn--ghost-light" to="/services">
-              View services
+            <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
+              Call {business.phone}
+            </a>
+            <Link className="btn btn--secondary" to="/contact">
+              Contact & map
             </Link>
           </div>
         </div>

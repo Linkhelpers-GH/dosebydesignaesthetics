@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import CherryWidget from "../components/CherryWidget";
 import Seo from "../components/Seo";
-import { business, membership } from "../data/business";
+import { business, membership, whatHappensNext } from "../data/business";
 import { buildBreadcrumbSchema, buildLocalBusinessSchema } from "../seo/schema";
 
 export default function FinancingPage() {
   return (
     <>
       <Seo
-        title="Financing & Membership"
-        description="Explore Cherry financing and the Dose by Design Banking Membership for flexible aesthetic treatment planning in San Diego."
+        title="Financing & Membership in San Diego, CA | Dose by Design"
+        description="Explore Cherry financing and the Banking Membership at Dose by Design in San Diego. Call or book a consultation to plan treatment flexibly."
         path="/financing"
         jsonLd={[
           buildLocalBusinessSchema(),
@@ -23,11 +23,19 @@ export default function FinancingPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">Financing</p>
-          <h1>Flexible ways to plan your care.</h1>
+          <h1>Financing and membership in San Diego, CA.</h1>
           <p className="lede">
             Choose Cherry financing for qualifying treatments, or build treatment credit with our
-            Banking Membership.
+            Banking Membership at Dose by Design.
           </p>
+          <div className="btn-row">
+            <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
+              Book consultation
+            </a>
+            <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
+              Call {business.phone}
+            </a>
+          </div>
         </div>
       </section>
 
@@ -37,7 +45,11 @@ export default function FinancingPage() {
             <h2>Cherry financing</h2>
             <p>
               Cherry offers patient financing options for qualifying applicants. Use the widget
-              below to explore payment plans, or ask our team during your consultation.
+              below to explore payment plans, or ask our team during your San Diego consultation.
+            </p>
+            <p className="muted">
+              Financing approval, terms, and available plans are determined by Cherry. Dose by Design
+              does not guarantee approval or a specific monthly payment.
             </p>
             <CherryWidget />
           </div>
@@ -57,6 +69,28 @@ export default function FinancingPage() {
                 Contact us
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--tight">
+        <div className="container">
+          <h2>What happens next</h2>
+          <ol className="next-steps">
+            <li>Explore Cherry estimates or membership details on this page.</li>
+            <li>Book a consultation to confirm treatment goals and candidacy.</li>
+            <li>Review financing or membership options with the team before you decide.</li>
+            {whatHappensNext.slice(2).map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+          <div className="btn-row">
+            <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
+              Book consultation
+            </a>
+            <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
+              Call {business.phone}
+            </a>
           </div>
         </div>
       </section>
