@@ -105,9 +105,9 @@ export const services = [
     image: "/images/provider-portrait-2.jpg",
     imagePosition: "center 38%",
     summary:
-      "Restore volume and refine contours for lips, cheeks, jawline, and under-eyes with a conservative approach.",
+      "Restore volume and refine contours with dermal fillers, including lip filler, plus cheeks, jawline, and under-eyes.",
     description: [
-      "Dermal fillers can restore lost volume, soften lines, and support facial balance. That may include lip enhancement, cheek support, jawline definition, or under-eye refinement when appropriate.",
+      "Dermal fillers can restore lost volume, soften lines, and support facial balance. That may include lip filler, cheek support, jawline definition, or under-eye refinement when appropriate.",
       "We take a personalized, conservative approach. The aim is never to change your features, but to refresh and enhance your natural structure.",
       "A good fit if you want subtle volume or contour support and are open to a collaborative plan. Not ideal if you want an overfilled look or same-day treatment without assessment.",
       "Your consultation covers candidacy, product selection, expected longevity, and aftercare. Swelling or bruising can occur. Starting prices appear in online booking and vary by product and amount used.",

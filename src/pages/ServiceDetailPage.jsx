@@ -20,13 +20,13 @@ export default function ServiceDetailPage() {
       title: "Neurotoxins & Botox in San Diego",
       description:
         "Neurotoxin treatments in San Diego with Cathy Tang, PA-C, including Botox and similar wrinkle relaxers for natural-looking, rested results.",
-      h1: "Neurotoxins in San Diego",
+      h1: "Neurotoxins & Botox in San Diego",
     },
     "dermal-fillers": {
-      title: "Dermal Fillers in San Diego",
+      title: "Dermal Fillers & Lip Filler in San Diego",
       description:
-        "Dermal fillers in San Diego for natural volume and contour, including lips, cheeks, jawline, and under-eyes, with Cathy Tang, PA-C.",
-      h1: "Dermal fillers in San Diego",
+        "Dermal fillers and lip filler in San Diego for natural volume and contour, including lips, cheeks, jawline, and under-eyes, with Cathy Tang, PA-C.",
+      h1: "Dermal fillers & lip filler in San Diego",
     },
     "filler-dissolver": {
       title: "Filler Dissolver in San Diego",
