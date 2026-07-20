@@ -23,7 +23,7 @@ export default function HomePage() {
         title="Dose by Design | Med Spa & Aesthetic Medicine in San Diego"
         description="Dose by Design is a San Diego aesthetic medicine practice led by Cathy Tang, PA-C. Natural-looking neurotoxins, dermal fillers, and microneedling with education-first consultations."
         path="/"
-        image="/images/provider-portrait-1.jpg"
+        image="/images/cathy-tang.jpg"
         jsonLd={[
           buildLocalBusinessSchema(),
           buildOrganizationSchema(),
@@ -35,26 +35,27 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero__media" aria-hidden="true">
           <img
-            src="/images/provider-portrait-1.jpg"
+            src="/images/cathy-tang.jpg"
             alt=""
-            width="1600"
-            height="2400"
+            width="1000"
+            height="1500"
             fetchPriority="high"
           />
         </div>
+        <div className="hero__wash" aria-hidden="true" />
         <div className="hero__overlay" aria-hidden="true" />
         <div className="container hero__content">
           <p className="hero__brand">Dose by Design</p>
-          <h1>Aesthetic medicine in San Diego for natural, refreshed results.</h1>
+          <h1>{business.tagline}</h1>
           <p>
-            Personalized neurotoxins, dermal fillers, and skin rejuvenation with Cathy Tang, PA-C.
-            Education first. Never rushed.
+            Personalized aesthetic medicine in San Diego with Cathy Tang, PA-C. Natural results,
+            education first, never rushed.
           </p>
           <div className="btn-row">
             <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
               Book consultation
             </a>
-            <Link className="btn btn--ghost-light" to="/services">
+            <Link className="btn btn--secondary btn--on-hero" to="/services">
               Explore services
             </Link>
           </div>
