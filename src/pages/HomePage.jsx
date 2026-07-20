@@ -112,9 +112,20 @@ export default function HomePage() {
             {services.slice(0, 3).map((service) => (
               <Link key={service.slug} className="service-tile" to={`/services/${service.slug}`}>
                 <div className="service-tile__media">
-                  <img src={service.image} alt="" width="800" height="600" loading="lazy" />
+                  <img
+                    src={service.image}
+                    alt=""
+                    width="800"
+                    height="600"
+                    loading="lazy"
+                    style={
+                      service.imagePosition
+                        ? { objectPosition: service.imagePosition }
+                        : undefined
+                    }
+                  />
                 </div>
-                <div>
+                <div className="service-tile__body">
                   <h3>{service.name}</h3>
                   <p>{service.summary}</p>
                   {service.priceFrom ? (
@@ -284,10 +295,10 @@ export default function HomePage() {
           </div>
           <div className="split__media">
             <img
-              src="/images/atmosphere-1.jpg"
-              alt="Dose by Design clinic atmosphere"
+              src="/images/clinic-1.jpg"
+              alt="Dose by Design brand imagery with lilac accents"
               width="1200"
-              height="800"
+              height="1400"
               loading="lazy"
             />
           </div>

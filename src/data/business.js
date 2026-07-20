@@ -85,8 +85,9 @@ export const services = [
     priceFrom: 300,
     duration: "About 1 hour",
     image: "/images/service-neurotoxins.jpg",
+    imagePosition: "70% center",
     summary:
-      "Soften fine lines and expression wrinkles with neurotoxins such as Botox and similar treatments, while preserving natural movement.",
+      "Soften fine lines with neurotoxins such as Botox and similar treatments, while keeping natural movement.",
     description: [
       "Neurotoxin treatments (including Botox and comparable wrinkle relaxers) gently relax targeted facial muscles to soften fine lines and help prevent deeper creases over time.",
       "Visits are planned around your expressions and comfort. The goal is a rested look, not a frozen one. Most appointments are about an hour so you have time to ask questions before treatment.",
@@ -101,9 +102,10 @@ export const services = [
     shortName: "Dermal Fillers",
     priceFrom: 400,
     duration: "About 1 hour",
-    image: "/images/service-fillers.jpg",
+    image: "/images/provider-portrait-2.jpg",
+    imagePosition: "center 38%",
     summary:
-      "Restore volume and refine contours, including lips, cheeks, jawline, and under-eyes, with an anatomy-driven approach.",
+      "Restore volume and refine contours for lips, cheeks, jawline, and under-eyes with a conservative approach.",
     description: [
       "Dermal fillers can restore lost volume, soften lines, and support facial balance. That may include lip enhancement, cheek support, jawline definition, or under-eye refinement when appropriate.",
       "We take a personalized, conservative approach. The aim is never to change your features, but to refresh and enhance your natural structure.",
@@ -118,9 +120,10 @@ export const services = [
     shortName: "Dissolve HA Filler",
     priceFrom: null,
     duration: "Consultation required",
-    image: "/images/atmosphere-3.jpg",
+    image: "/images/atmosphere-2.jpg",
+    imagePosition: "center 42%",
     summary:
-      "Carefully dissolve hyaluronic acid filler to address overcorrection, migration, asymmetry, or unwanted results.",
+      "Dissolve hyaluronic acid filler to address overcorrection, migration, asymmetry, or unwanted results.",
     description: [
       "Hyaluronic acid filler dissolving uses hyaluronidase to safely break down previously placed filler when refinement or correction is needed.",
       "Our approach is precise and conservative, focused on restoring balance and creating a clean foundation for future treatments if desired.",
@@ -135,7 +138,8 @@ export const services = [
     shortName: "Microneedling",
     priceFrom: 400,
     duration: "About 1 hour",
-    image: "/images/atmosphere-2.jpg",
+    image: "/images/service-fillers.jpg",
+    imagePosition: "center 35%",
     summary:
       "Support smoother-looking skin and a refreshed glow with a tailored microneedling session.",
     description: [

@@ -31,25 +31,50 @@ export default function ServicesPage() {
       </section>
 
       <section className="section section--lavender">
-        <div className="container grid-2">
+        <div className="container grid-services">
           {services.map((service) => (
-            <Link key={service.slug} className="service-tile" to={`/services/${service.slug}`}>
-              <div className="service-tile__media">
-                <img src={service.image} alt="" width="900" height="675" loading="lazy" />
-              </div>
-              <div>
-                <h2 style={{ fontSize: "1.75rem" }}>{service.name}</h2>
+            <article key={service.slug} className="service-card">
+              <Link className="service-card__media" to={`/services/${service.slug}`}>
+                <img
+                  src={service.image}
+                  alt=""
+                  width="720"
+                  height="900"
+                  loading="lazy"
+                  style={
+                    service.imagePosition
+                      ? { objectPosition: service.imagePosition }
+                      : undefined
+                  }
+                />
+              </Link>
+              <div className="service-card__body">
+                <h2>{service.name}</h2>
                 <p>{service.summary}</p>
-                {service.priceFrom ? (
-                  <div className="price-note">From ${service.priceFrom} · {service.duration}</div>
-                ) : (
-                  <div className="price-note">{service.duration}</div>
-                )}
+                <p className="price-note">
+                  {service.priceFrom
+                    ? `From $${service.priceFrom} · ${service.duration}`
+                    : service.duration}
+                </p>
+                <div className="btn-row">
+                  <Link className="btn btn--primary" to={`/services/${service.slug}`}>
+                    View details
+                  </Link>
+                  <a
+                    className="btn btn--secondary"
+                    href={business.bookingUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Book
+                  </a>
+                </div>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
-        <div className="container" style={{ marginTop: "2rem" }}>
+
+        <div className="container" style={{ marginTop: "2.5rem" }}>
           <p className="muted">
             Consultations are available in person or virtually. Pricing shown reflects current
             online booking starting rates and may vary based on your personalized plan.

@@ -91,11 +91,22 @@ export default function ServiceDetailPage() {
       </section>
 
       <section className="section">
-        <div className="container split">
+        <div className="container split split--top">
           <div className="split__media">
-            <img src={service.image} alt="" width="1000" height="750" loading="eager" />
+            <img
+              src={service.image}
+              alt=""
+              width="1000"
+              height="750"
+              loading="eager"
+              style={
+                service.imagePosition
+                  ? { objectPosition: service.imagePosition }
+                  : undefined
+              }
+            />
           </div>
-          <div>
+          <div className="split__copy">
             <h2>What to expect</h2>
             {service.description.map((paragraph) => (
               <p key={paragraph.slice(0, 28)}>{paragraph}</p>

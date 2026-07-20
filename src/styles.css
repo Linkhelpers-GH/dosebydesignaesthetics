@@ -446,6 +446,7 @@ h3 {
 .grid-journey {
   display: grid;
   gap: 1.25rem;
+  align-items: stretch;
 }
 
 .concern-list {
@@ -464,7 +465,9 @@ h3 {
 }
 
 .service-tile {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   gap: 1rem;
   text-decoration: none;
   color: inherit;
@@ -476,15 +479,22 @@ h3 {
 }
 
 .service-tile__media {
-  aspect-ratio: 4 / 3;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   background: var(--lavender-100);
+  flex: 0 0 auto;
 }
 
 .service-tile__media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
+  display: block;
   transition: transform 0.8s var(--ease);
 }
 
@@ -492,7 +502,15 @@ h3 {
   transform: scale(1.04);
 }
 
-.service-tile h3 {
+.service-tile__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.service-tile h3,
+.service-tile h2 {
   margin-bottom: 0.35rem;
 }
 
@@ -508,23 +526,109 @@ h3 {
   font-weight: 600;
 }
 
+.grid-services {
+  display: grid;
+  gap: 2.5rem 1.75rem;
+}
+
+@media (min-width: 720px) {
+  .grid-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card__media {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--lavender-100);
+  flex: 0 0 auto;
+}
+
+.service-card__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.8s var(--ease);
+}
+
+.service-card__media:hover img {
+  transform: scale(1.03);
+}
+
+.service-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 1.15rem;
+}
+
+.service-card__body h2 {
+  margin: 0 0 0.55rem;
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+}
+
+.service-card__body p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.service-card__body .price-note {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+.service-card__body .btn-row {
+  margin-top: auto;
+  padding-top: 1.15rem;
+}
+
 .split {
   display: grid;
   gap: 2rem;
   align-items: center;
 }
 
+.split--top {
+  align-items: start;
+}
+
 .split__media {
   overflow: hidden;
   background: var(--lavender-100);
   min-height: 320px;
+  aspect-ratio: 4 / 5;
+  position: relative;
 }
 
 .split__media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  min-height: 320px;
+  object-position: center center;
+  min-height: 0;
+}
+
+.split--top .split__media {
+  align-self: start;
+}
+
+.split--top .split__copy h2:first-child {
+  margin-top: 0;
 }
 
 .journey-step {
