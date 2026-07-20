@@ -78,8 +78,8 @@ export default function ServiceDetailPage() {
           <h1>{seo.h1}</h1>
           <p className="lede">{service.opening || service.summary}</p>
           <p className="muted">
-            With {providers.cathy.name}, {providers.cathy.credentials}, at {business.address.full}.{" "}
-            {business.rating.value}.0 from {business.rating.count} Google reviews.
+            With {providers.cathy.name}, {providers.cathy.credentials} · {business.rating.value}.0
+            Google rating
           </p>
           <div className="btn-row">
             <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
