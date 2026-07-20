@@ -23,7 +23,7 @@ export default function ServicesPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">Services</p>
-          <h1>Curated treatments for natural balance.</h1>
+          <h1>Aesthetic services in San Diego.</h1>
           <p className="lede">
             Every recommendation starts with your goals, anatomy, and comfort. Never a one-size plan.
           </p>

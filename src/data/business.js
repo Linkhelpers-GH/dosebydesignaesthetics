@@ -86,10 +86,12 @@ export const services = [
     duration: "About 1 hour",
     image: "/images/service-neurotoxins.jpg",
     summary:
-      "Soften fine lines and expression wrinkles while preserving natural movement, for a rested, balanced look.",
+      "Soften fine lines and expression wrinkles with neurotoxins such as Botox and similar treatments, while preserving natural movement.",
     description: [
-      "Our neurotoxin treatments are designed to gently relax targeted facial muscles, helping soften fine lines and prevent deeper creases from forming over time.",
-      "The goal is subtle and precise: you should look refreshed, not frozen. Each plan is tailored to your features, expressions, and comfort level.",
+      "Neurotoxin treatments (including Botox and comparable wrinkle relaxers) gently relax targeted facial muscles to soften fine lines and help prevent deeper creases over time.",
+      "Visits are planned around your expressions and comfort. The goal is a rested look, not a frozen one. Most appointments are about an hour so you have time to ask questions before treatment.",
+      "A good fit if you want preventative or maintenance care for forehead lines, frown lines, or crow’s feet and prefer subtle, natural movement. Not ideal if you want dramatic change in one visit or are not ready for a medical consultation.",
+      "Aftercare is reviewed before you leave. Results develop over days and typically need maintenance. Pricing starts from our online booking rate and varies by areas treated and units required.",
     ],
     concerns: ["Fine lines", "Wrinkles", "Looking tired", "Preventative care"],
   },
@@ -101,10 +103,12 @@ export const services = [
     duration: "About 1 hour",
     image: "/images/service-fillers.jpg",
     summary:
-      "Restore volume and refine contours with an anatomy-driven approach that enhances what’s already there.",
+      "Restore volume and refine contours, including lips, cheeks, jawline, and under-eyes, with an anatomy-driven approach.",
     description: [
-      "Dermal fillers can restore lost volume, soften lines, and support facial balance, whether refining lips, cheeks, jawline, or under-eyes.",
+      "Dermal fillers can restore lost volume, soften lines, and support facial balance. That may include lip enhancement, cheek support, jawline definition, or under-eye refinement when appropriate.",
       "We take a personalized, conservative approach. The aim is never to change your features, but to refresh and enhance your natural structure.",
+      "A good fit if you want subtle volume or contour support and are open to a collaborative plan. Not ideal if you want an overfilled look or same-day treatment without assessment.",
+      "Your consultation covers candidacy, product selection, expected longevity, and aftercare. Swelling or bruising can occur. Starting prices appear in online booking and vary by product and amount used.",
     ],
     concerns: ["Facial volume loss", "Facial asymmetry", "Looking tired", "Aging gracefully"],
   },
@@ -120,6 +124,8 @@ export const services = [
     description: [
       "Hyaluronic acid filler dissolving uses hyaluronidase to safely break down previously placed filler when refinement or correction is needed.",
       "Our approach is precise and conservative, focused on restoring balance and creating a clean foundation for future treatments if desired.",
+      "A good fit if you are unhappy with overcorrection, migration, asymmetry, or unwanted hyaluronic acid filler. Not every filler type can be dissolved the same way; we confirm product history during consultation.",
+      "Expect assessment first. Dissolving may require follow-up, and future filler is optional, never assumed.",
     ],
     concerns: ["Facial asymmetry", "Overcorrection", "Unwanted filler results"],
   },
@@ -135,6 +141,8 @@ export const services = [
     description: [
       "A 60-minute microneedling session designed to help improve the look of texture and tone.",
       "We’ll tailor the treatment to your skin goals and provide aftercare guidance for best results.",
+      "A good fit if you want smoother-looking skin and a refreshed glow with downtime that fits a maintenance plan. Not ideal for every active skin condition; candidacy is reviewed in consultation.",
+      "Aftercare typically includes sun protection and a short recovery window. Starting price is listed in online booking and may vary with add-ons discussed in your visit.",
     ],
     concerns: ["Skin texture", "Skin tone", "Looking refreshed"],
   },

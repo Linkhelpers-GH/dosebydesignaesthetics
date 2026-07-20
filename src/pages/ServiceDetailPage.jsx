@@ -15,11 +15,44 @@ export default function ServiceDetailPage() {
     return <Navigate to="/services" replace />;
   }
 
+  const seoBySlug = {
+    neurotoxins: {
+      title: "Neurotoxins & Botox in San Diego",
+      description:
+        "Neurotoxin treatments in San Diego with Cathy Tang, PA-C, including Botox and similar wrinkle relaxers for natural-looking, rested results.",
+      h1: "Neurotoxins in San Diego",
+    },
+    "dermal-fillers": {
+      title: "Dermal Fillers in San Diego",
+      description:
+        "Dermal fillers in San Diego for natural volume and contour, including lips, cheeks, jawline, and under-eyes, with Cathy Tang, PA-C.",
+      h1: "Dermal fillers in San Diego",
+    },
+    "filler-dissolver": {
+      title: "Filler Dissolver in San Diego",
+      description:
+        "Hyaluronic acid filler dissolving in San Diego for overcorrection, migration, or unwanted results, with a precise, conservative approach.",
+      h1: "Filler dissolver in San Diego",
+    },
+    microneedling: {
+      title: "Microneedling in San Diego",
+      description:
+        "Microneedling in San Diego to support smoother-looking skin and a refreshed glow, tailored to your skin goals with Cathy Tang, PA-C.",
+      h1: "Microneedling in San Diego",
+    },
+  };
+
+  const seo = seoBySlug[service.slug] || {
+    title: `${service.name} in San Diego`,
+    description: service.summary,
+    h1: `${service.name} in San Diego`,
+  };
+
   return (
     <>
       <Seo
-        title={`${service.name} in San Diego`}
-        description={service.summary}
+        title={seo.title}
+        description={seo.description}
         path={`/services/${service.slug}`}
         image={service.image}
         jsonLd={[
@@ -38,7 +71,7 @@ export default function ServiceDetailPage() {
           <p className="eyebrow">
             <Link to="/services">Services</Link> / {service.name}
           </p>
-          <h1>{service.name}</h1>
+          <h1>{seo.h1}</h1>
           <p className="lede">{service.summary}</p>
           <div className="btn-row">
             <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">

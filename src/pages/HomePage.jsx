@@ -20,8 +20,8 @@ export default function HomePage() {
   return (
     <>
       <Seo
-        title="Dose by Design | Aesthetic Medicine in San Diego"
-        description="Personalized aesthetic medicine in San Diego with Cathy Tang, PA-C. Natural-looking neurotoxins, dermal fillers, and skin rejuvenation. Education first, never rushed."
+        title="Dose by Design | Med Spa & Aesthetic Medicine in San Diego"
+        description="Dose by Design is a San Diego aesthetic medicine practice led by Cathy Tang, PA-C. Natural-looking neurotoxins, dermal fillers, and microneedling with education-first consultations."
         path="/"
         image="/images/provider-portrait-1.jpg"
         jsonLd={[
@@ -45,10 +45,10 @@ export default function HomePage() {
         <div className="hero__overlay" aria-hidden="true" />
         <div className="container hero__content">
           <p className="hero__brand">Dose by Design</p>
-          <h1>Look refreshed, still unmistakably you.</h1>
+          <h1>Aesthetic medicine in San Diego for natural, refreshed results.</h1>
           <p>
-            Personalized aesthetic treatments in San Diego with a calm, educational approach to
-            natural-looking results.
+            Personalized neurotoxins, dermal fillers, and skin rejuvenation with Cathy Tang, PA-C.
+            Education first. Never rushed.
           </p>
           <div className="btn-row">
             <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
