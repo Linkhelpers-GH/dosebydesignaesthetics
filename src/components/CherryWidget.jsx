@@ -33,7 +33,7 @@ export default function CherryWidget() {
               zIndex: 9999,
               ctaFontFamily: "Figtree",
               bodyFontFamily: "Figtree",
-              ctaColor: "#d6b8f8",
+              ctaColor: "#111111",
               ctaTextColor: "#FFFFFF",
             },
           },

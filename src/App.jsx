@@ -1,7 +1,8 @@
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Analytics from "./components/Analytics";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
@@ -10,6 +11,7 @@ import ContactPage from "./pages/ContactPage";
 import FaqPage from "./pages/FaqPage";
 import FinancingPage from "./pages/FinancingPage";
 import BookPage from "./pages/BookPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -34,6 +36,7 @@ export default function App() {
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
+      <Analytics />
       <Header />
       <main id="main-content" className="site-main">
         <ScrollToTop />
@@ -46,7 +49,7 @@ export default function App() {
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/financing" element={<FinancingPage />} />
           <Route path="/book" element={<BookPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />

@@ -45,6 +45,8 @@ export const business = {
   website: "https://www.dosebydesignaesthetics.info",
   mapsUrl:
     "https://www.google.com/maps/place/Dose+by+Design/@32.7601,-117.128,17z/data=!4m6!3m5!1s0x80d955daeec6a483:0x5171d6e5c32531e2!8m2!3d32.7601!4d-117.128!16s%2Fg%2F11y",
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=Dose+by+Design%2C+4642+30th+St+Suite+104A%2C+San+Diego%2C+CA+92116&z=16&output=embed",
   placeId: "ChIJg6TG7tpV2YAR4jElw-XWcVE",
 };
 

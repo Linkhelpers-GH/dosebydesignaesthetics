@@ -3,14 +3,12 @@ import Seo from "../components/Seo";
 import {
   business,
   concerns,
-  faqs,
   journey,
   membership,
   providers,
   services,
 } from "../data/business";
 import {
-  buildFaqSchema,
   buildLocalBusinessSchema,
   buildOrganizationSchema,
   buildPersonSchemas,
@@ -28,7 +26,6 @@ export default function HomePage() {
           buildLocalBusinessSchema(),
           buildOrganizationSchema(),
           ...buildPersonSchemas(),
-          buildFaqSchema(),
         ]}
       />
 
@@ -78,7 +75,7 @@ export default function HomePage() {
           </div>
           <div className="trust-item">
             <strong>San Diego</strong>
-            <span>Suite 104A, University Heights</span>
+            <span>Suite 104A</span>
           </div>
         </div>
       </div>
@@ -106,18 +103,18 @@ export default function HomePage() {
           <p className="eyebrow">Featured services</p>
           <h2>Treatments designed for balance.</h2>
           <p className="lede">
-            Verified offerings from our practice: injectables, corrective dissolving, microneedling,
-            and consultations, booked online when you’re ready.
+            Neurotoxins, dermal fillers, filler dissolving, and microneedling, booked online when
+            you’re ready.
           </p>
-          <div className="grid-3" style={{ marginTop: "2rem" }}>
-            {services.slice(0, 3).map((service) => (
+          <div className="grid-services" style={{ marginTop: "2rem" }}>
+            {services.map((service) => (
               <Link key={service.slug} className="service-tile" to={`/services/${service.slug}`}>
                 <div className="service-tile__media">
                   <img
                     src={service.image}
                     alt=""
                     width="800"
-                    height="600"
+                    height="1000"
                     loading="lazy"
                     style={
                       service.imagePosition
@@ -204,9 +201,12 @@ export default function HomePage() {
               day or take time to decide.
             </p>
             <div className="btn-row">
-              <a className="btn btn--ghost-light" href={business.bookingUrl} target="_blank" rel="noreferrer">
-                Book in person or virtual
-              </a>
+              <Link className="btn btn--ghost-light" to="/faq">
+                Read FAQs
+              </Link>
+              <Link className="btn btn--ghost-light" to="/financing">
+                Financing & membership
+              </Link>
             </div>
           </div>
         </div>
@@ -228,80 +228,43 @@ export default function HomePage() {
             </div>
           </div>
           <div>
-            <p className="eyebrow">Membership</p>
-            <h2>Banking Membership</h2>
-            <p>{membership.summary}</p>
-            <div className="btn-row">
-              <a
-                className="btn btn--primary"
-                href={business.patientPortalUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Join in Patient Portal
-              </a>
-              <Link className="btn btn--secondary" to="/financing">
-                Financing options
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--lavender">
-        <div className="container">
-          <p className="eyebrow">FAQ</p>
-          <h2>Common questions</h2>
-          <div className="faq-list" style={{ marginTop: "1.5rem" }}>
-            {faqs.slice(0, 4).map((item) => (
-              <details className="faq-item" key={item.question}>
-                <summary>{item.question}</summary>
-                <p>{item.answer}</p>
-              </details>
-            ))}
-          </div>
-          <div className="btn-row">
-            <Link className="btn btn--secondary" to="/faq">
-              See all FAQs
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container split">
-          <div>
-            <p className="eyebrow">Location</p>
-            <h2>Visit us in San Diego</h2>
+            <p className="eyebrow">Visit</p>
+            <h2>San Diego studio</h2>
             <p>
               <strong>{business.address.full}</strong>
             </p>
             <p>{business.locationNote}</p>
-            <div className="hours-table" style={{ marginTop: "1.25rem" }}>
-              {business.hours.map((row) => (
-                <div className="hours-row" key={row.day}>
-                  <span>{row.day}</span>
-                  <span>{row.hours}</span>
-                </div>
-              ))}
-            </div>
             <div className="btn-row">
               <Link className="btn btn--primary" to="/contact">
-                Contact & directions
+                Contact & map
               </Link>
               <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
                 {business.phone}
               </a>
             </div>
           </div>
-          <div className="split__media">
-            <img
-              src="/images/clinic-1.jpg"
-              alt="Dose by Design brand imagery with lilac accents"
-              width="1200"
-              height="1400"
-              loading="lazy"
-            />
+        </div>
+      </section>
+
+      <section className="section section--lavender section--tight">
+        <div className="container" style={{ textAlign: "center" }}>
+          <p className="eyebrow">Membership</p>
+          <h2>Banking Membership</h2>
+          <p className="lede" style={{ marginInline: "auto" }}>
+            {membership.summary}
+          </p>
+          <div className="btn-row" style={{ justifyContent: "center" }}>
+            <a
+              className="btn btn--primary"
+              href={business.patientPortalUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Join in Patient Portal
+            </a>
+            <Link className="btn btn--secondary" to="/financing">
+              Financing options
+            </Link>
           </div>
         </div>
       </section>

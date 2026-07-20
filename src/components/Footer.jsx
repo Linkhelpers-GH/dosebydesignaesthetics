@@ -32,6 +32,10 @@ export default function Footer() {
               <a href={`tel:${business.phoneTel}`}>{business.phone}</a>
               <br />
               <a href={`mailto:${business.email}`}>{business.email}</a>
+              <br />
+              <a href={business.mapsUrl} target="_blank" rel="noreferrer">
+                Get directions
+              </a>
             </p>
           </div>
         </div>
@@ -39,7 +43,11 @@ export default function Footer() {
         <div>
           <h3>Explore</h3>
           <div className="footer-links">
-            <Link to="/services">Services</Link>
+            <Link to="/services">All services</Link>
+            <Link to="/services/neurotoxins">Neurotoxins</Link>
+            <Link to="/services/dermal-fillers">Dermal fillers</Link>
+            <Link to="/services/filler-dissolver">Filler dissolver</Link>
+            <Link to="/services/microneedling">Microneedling</Link>
             <Link to="/about">About</Link>
             <Link to="/financing">Financing</Link>
             <Link to="/faq">FAQ</Link>

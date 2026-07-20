@@ -1,6 +1,6 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import Seo from "../components/Seo";
-import { business, services } from "../data/business";
+import { business, providers, services } from "../data/business";
 import {
   buildBreadcrumbSchema,
   buildLocalBusinessSchema,
@@ -73,9 +73,12 @@ export default function ServiceDetailPage() {
           </p>
           <h1>{seo.h1}</h1>
           <p className="lede">{service.summary}</p>
+          <p className="muted">
+            With {providers.cathy.name}, {providers.cathy.credentials}, at {business.address.full}.
+          </p>
           <div className="btn-row">
             <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
-              Book now
+              Book consultation
             </a>
             {service.priceFrom ? (
               <span className="price-note" style={{ alignSelf: "center" }}>
@@ -95,7 +98,7 @@ export default function ServiceDetailPage() {
           <div className="split__media">
             <img
               src={service.image}
-              alt=""
+              alt={`${service.name} at Dose by Design in San Diego`}
               width="1000"
               height="750"
               loading="eager"
@@ -117,12 +120,21 @@ export default function ServiceDetailPage() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
+            <div className="service-nap">
+              <p>
+                <strong>{business.name}</strong>
+                <br />
+                {business.address.full}
+                <br />
+                <a href={`tel:${business.phoneTel}`}>{business.phone}</a>
+              </p>
+            </div>
             <div className="btn-row">
-              <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
-                Book consultation
-              </a>
               <Link className="btn btn--secondary" to="/contact">
                 Ask a question
+              </Link>
+              <Link className="btn btn--secondary" to="/about">
+                Meet Cathy
               </Link>
             </div>
           </div>

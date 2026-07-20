@@ -26,7 +26,9 @@ npm run preview
 6. Install Command: `npm install`
 7. Deploy.
 
-`vercel.json` already rewrites SPA routes to `index.html`.
+`vercel.json` rewrites SPA routes to `index.html` and redirects `/book` to Aesthetic Record.
+
+Optional env vars (see `.env.example`): `VITE_GA_MEASUREMENT_ID`, `VITE_GSC_VERIFICATION`.
 
 After DNS cutover, point `dosebydesignaesthetics.info` to the Vercel project.
 
@@ -35,4 +37,4 @@ After DNS cutover, point `dosebydesignaesthetics.info` to the Vercel project.
 - NAP source: GBP address + website phone + GBP hours (`src/data/business.js`)
 - Booking: Aesthetic Record
 - Financing: Cherry widget + Banking Membership
-- Unverified until confirmed: Allē / Aspire / Evolus, refer-a-friend, consult deposit, Lip Flip, Cortisone
+- Unverified until confirmed: Allē / Aspire / Evolus, refer-a-friend, consult deposit, Lip Flip, Cortisone, Xeomin, displayed starting prices

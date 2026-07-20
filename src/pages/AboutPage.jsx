@@ -28,7 +28,7 @@ export default function AboutPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">About</p>
-          <h1>A practice built around personalized, honest care.</h1>
+          <h1>Cathy Tang, PA-C, aesthetic injector in San Diego.</h1>
           <p className="lede">
             Dose by Design exists to help you look refreshed and confident, while still looking like
             yourself.

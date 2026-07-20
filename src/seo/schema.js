@@ -75,7 +75,7 @@ export function buildPersonSchemas() {
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      name: providers.cathy.name,
+      name: `${providers.cathy.name}, ${providers.cathy.credentials}`,
       jobTitle: providers.cathy.role,
       worksFor: { "@id": `${business.website}/#business` },
       image: `${business.website}${providers.cathy.image}`,
@@ -84,7 +84,7 @@ export function buildPersonSchemas() {
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      name: providers.medicalDirector.name,
+      name: `${providers.medicalDirector.name}, ${providers.medicalDirector.credentials}`,
       jobTitle: providers.medicalDirector.role,
       worksFor: { "@id": `${business.website}/#business` },
       image: `${business.website}${providers.medicalDirector.image}`,

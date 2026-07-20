@@ -1,4 +1,5 @@
 import Seo from "../components/Seo";
+import MapEmbed from "../components/MapEmbed";
 import { business } from "../data/business";
 import { buildBreadcrumbSchema, buildLocalBusinessSchema } from "../seo/schema";
 
@@ -6,7 +7,7 @@ export default function ContactPage() {
   return (
     <>
       <Seo
-        title="Contact & Location"
+        title="Contact & Location in San Diego"
         description="Visit Dose by Design at 4642 30th St Suite 104A, San Diego, CA 92116. Call (209) 991-2227 or book online."
         path="/contact"
         jsonLd={[
@@ -21,7 +22,7 @@ export default function ContactPage() {
       <section className="page-hero">
         <div className="container">
           <p className="eyebrow">Contact</p>
-          <h1>We’re here when you’re ready.</h1>
+          <h1>Contact Dose by Design in San Diego.</h1>
           <p className="lede">
             Book online, call, or email. We’re happy to help you find Suite 104A for your visit.
           </p>
@@ -47,8 +48,8 @@ export default function ContactPage() {
               <a className="btn btn--primary" href={business.bookingUrl} target="_blank" rel="noreferrer">
                 Book consultation
               </a>
-              <a className="btn btn--secondary" href={business.mapsUrl} target="_blank" rel="noreferrer">
-                Open in Google Maps
+              <a className="btn btn--secondary" href={`tel:${business.phoneTel}`}>
+                Call {business.phone}
               </a>
             </div>
           </div>
@@ -71,7 +72,23 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--tight">
+        <div className="container">
+          <p className="eyebrow">Directions</p>
+          <h2>Find us on the map</h2>
+          <p className="lede">
+            Use the map for turn-by-turn directions to Suite 104A.
+          </p>
+          <MapEmbed className="map-embed--wide" />
+          <div className="btn-row">
+            <a className="btn btn--secondary" href={business.mapsUrl} target="_blank" rel="noreferrer">
+              Get directions
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--lavender">
         <div className="container split">
           <div className="split__media">
             <img

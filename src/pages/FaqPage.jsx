@@ -36,7 +36,7 @@ export default function FaqPage() {
       <section className="section section--lavender">
         <div className="container faq-list">
           {faqs.map((item) => (
-            <details className="faq-item" key={item.question} open>
+            <details className="faq-item" key={item.question}>
               <summary>{item.question}</summary>
               <p>{item.answer}</p>
             </details>

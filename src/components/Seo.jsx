@@ -7,12 +7,14 @@ export default function Seo({
   path = "/",
   image = "/images/logo.png",
   jsonLd = [],
+  noIndex = false,
 }) {
   const fullTitle = title.includes("Dose by Design")
     ? title
     : `${title} | Dose by Design`;
   const url = `${business.website}${path === "/" ? "/" : path}`;
   const imageUrl = image.startsWith("http") ? image : `${business.website}${image}`;
+  const jsonLdKey = JSON.stringify(jsonLd);
 
   useEffect(() => {
     document.title = fullTitle;
@@ -38,6 +40,7 @@ export default function Seo({
     setMeta("name", "twitter:title", fullTitle);
     setMeta("name", "twitter:description", description);
     setMeta("name", "twitter:image", imageUrl);
+    setMeta("name", "robots", noIndex ? "noindex, nofollow" : "index, follow");
 
     let canonical = document.head.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -45,19 +48,23 @@ export default function Seo({
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", url);
+    canonical.setAttribute("href", noIndex ? `${business.website}/` : url);
 
     const existing = document.head.querySelectorAll("script[data-seo-jsonld]");
     existing.forEach((node) => node.remove());
 
-    jsonLd.flat().forEach((schema) => {
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.dataset.seoJsonld = "true";
-      script.textContent = JSON.stringify(schema);
-      document.head.appendChild(script);
-    });
-  }, [fullTitle, description, url, imageUrl, jsonLd]);
+    if (!noIndex) {
+      JSON.parse(jsonLdKey)
+        .flat()
+        .forEach((schema) => {
+          const script = document.createElement("script");
+          script.type = "application/ld+json";
+          script.dataset.seoJsonld = "true";
+          script.textContent = JSON.stringify(schema);
+          document.head.appendChild(script);
+        });
+    }
+  }, [fullTitle, description, url, imageUrl, jsonLdKey, noIndex]);
 
   return null;
 }
